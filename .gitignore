@@ -1,0 +1,14 @@
+#modules
+node_modules
+/frontend/node_modules/
+
+#Production
+/frontend/build/
+
+#misc
+/frontend/.env.local
+/frontend/.env.local.development
+/frontend/.env.test.local
+/frontend/.env.test.Production
+
+

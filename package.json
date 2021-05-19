@@ -1,0 +1,28 @@
+{
+	"name": "valiosa",
+	"version": "1.0.0",
+	"description": "Valiosa web store second revision backend",
+	"main": "server.js",
+	"scripts": {
+		"start": "node backend/server.js",
+		"dev": "SET NODE_ENV=DEVELOPMENT& nodemon backend/server",
+		"prod": "SET NODE_ENV=PRODUCTION& nodemon backend/server"
+	},
+	"author": "James Kahoro Gakure",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"cloudinary": "^1.25.1",
+		"cookie-parser": "^1.4.5",
+		"dotenv": "^9.0.2",
+		"express": "^4.17.1",
+		"express-fileupload": "^1.2.1",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.12.8",
+		"nodemailer": "^6.6.0",
+		"validator": "^13.6.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.7"
+	}
+}
