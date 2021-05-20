@@ -45,52 +45,52 @@ const Login = ({ history, location }) => {
 				<Fragment>
 					<MetaData title={'Login'} />
 
-					<div class="container h-100 margin-login">
-						<div class="d-flex justify-content-center h-100">
-							<div class="user_card">
-								<div class="d-flex justify-content-center">
-									<div class="brand_logo_container">
+					<div className="container h-100 margin-login">
+						<div className="d-flex justify-content-center h-100">
+							<div className="user_card">
+								<div className="d-flex justify-content-center">
+									<div className="brand_logo_container">
 										<img
 											src="/images/Valiosa_logo.png"
 											alt="logo"
-											class="brand_logo"
+											className="brand_logo"
 										/>
 									</div>
 								</div>
-								<div class="d-flex justify-content-center form_container">
+								<div className="d-flex justify-content-center form_container">
 									<form onSubmit={submitHandler}>
-										<div class="input-group mb-3">
-											<div class="input-group-append">
-												<span class="input-group-text">
-													<i class="bi bi-person"></i>
+										<div className="input-group mb-3">
+											<div className="input-group-append">
+												<span className="input-group-text">
+													<i className="bi bi-person"></i>
 												</span>
 											</div>
 											<input
 												type="text"
 												name=""
-												class="form-control input_user"
+												className="form-control input_user"
 												value={email}
 												onChange={(e) => setEmail(e.target.value)}
 												placeholder="Email"
 											/>
 										</div>
-										<div class="input-group mb-2">
-											<div class="input-group-append">
-												<span class="input-group-text">
-													<i class="fa fa-key"></i>
+										<div className="input-group mb-2">
+											<div className="input-group-append">
+												<span className="input-group-text">
+													<i className="fa fa-key"></i>
 												</span>
 											</div>
 											<input
 												type="password"
 												name=""
-												class="form-control input_pass"
+												className="form-control input_pass"
 												value={password}
 												onChange={(e) => setPassword(e.target.value)}
 												placeholder="password"
 											/>
 										</div>
 
-										<div class="d-flex justify-content-center mt-3 login_container">
+										<div className="d-flex justify-content-center mt-3 login_container">
 											<button
 												id="login_button"
 												type="submit"
@@ -101,19 +101,19 @@ const Login = ({ history, location }) => {
 									</form>
 								</div>
 
-								<div class="mt-4">
+								<div className="mt-4">
 									<div
-										class="d-flex justify-content-center links"
+										className="d-flex justify-content-center links"
 										style={{ color: 'white' }}>
 										Don't have an account?
 										<Link
 											style={{ color: '#ca76d8' }}
 											to="/register"
-											class="ml-2">
+											className="ml-2">
 											Sign Up
 										</Link>
 									</div>
-									<div class="d-flex justify-content-center links">
+									<div className="d-flex justify-content-center links">
 										<Link style={{ color: '#ca76d8' }} to="/password/forgot">
 											Forgot your password?
 										</Link>

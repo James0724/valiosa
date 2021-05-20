@@ -4,25 +4,25 @@ import { Link } from 'react-router-dom';
 const Product = ({ product, col }) => {
 	return (
 		<div className={`col-sm-8 col-md-3 col-lg-${col} my-2`}>
-			<article class="col-item card p-1 rounded text-center">
-				<div class="photo">
-					<div class="options-cart-round">
-						<button class="btn btn-default" title="Add to cart">
-							<span class="fa fa-shopping-cart"></span>
+			<article className="col-item card p-1 rounded text-center">
+				<div className="photo">
+					<div className="options-cart-round">
+						<button className="btn btn-default" title="Add to cart">
+							<span className="fa fa-shopping-cart"></span>
 						</button>
 					</div>
 					<Link to={`/product/${product._id}`}>
 						<img
 							src={product.images[0].url}
-							class="img-responsive"
+							className="img-responsive"
 							alt={product.name}
 						/>
 					</Link>
 				</div>
-				<div class="info mt-2">
-					<div class="row text-center">
+				<div className="info mt-2">
+					<div className="row text-center">
 						<h5 className="card-title">
-							<Link class="details" to={`/product/${product._id}`}>
+							<Link className="details" to={`/product/${product._id}`}>
 								{product.name}
 							</Link>
 						</h5>

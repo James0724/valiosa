@@ -59,8 +59,8 @@ const Cart = ({ history }) => {
 													<img
 														src={item.image}
 														alt="Laptop"
-														height="90"
-														width="115"
+														height="90px"
+														width="115px"
 													/>
 												</div>
 

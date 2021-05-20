@@ -38,24 +38,24 @@ const Footer = () => {
 						<h5>Information</h5>
 						<ul className="list-unstyled quick-links">
 							<li>
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-angle-double-right"></i>Frequently asked
 									questions
 								</Link>
 							</li>
 							<li>
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-angle-double-right"></i>Payment and
 									delivery
 								</Link>
 							</li>
 							<li>
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-angle-double-right"></i>Privacy policy
 								</Link>
 							</li>
 							<li>
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-angle-double-right"></i>Terms and
 									conditions
 								</Link>
@@ -66,14 +66,14 @@ const Footer = () => {
 						<h5>Shop with us</h5>
 						<ul className="list-unstyled quick-links">
 							<li>
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-angle-double-right"></i>Shipping and
 									refunds
 								</Link>
 							</li>
 
 							<li>
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-angle-double-right"></i>Get Started
 								</Link>
 							</li>
@@ -83,12 +83,12 @@ const Footer = () => {
 						<h5>About us</h5>
 						<ul className="list-unstyled quick-links">
 							<li>
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-angle-double-right"></i>Home
 								</Link>
 							</li>
 							<li>
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-angle-double-right"></i>About us
 								</Link>
 							</li>
@@ -99,27 +99,27 @@ const Footer = () => {
 					<div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
 						<ul className="list-unstyled list-inline social text-center">
 							<li className="list-inline-item">
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-facebook"></i>
 								</Link>
 							</li>
 							<li className="list-inline-item">
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-twitter"></i>
 								</Link>
 							</li>
 							<li className="list-inline-item">
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-instagram"></i>
 								</Link>
 							</li>
 							<li className="list-inline-item">
-								<Link href="!#">
+								<Link to="!#">
 									<i className="fa fa-google-plus"></i>
 								</Link>
 							</li>
 							<li className="list-inline-item">
-								<Link href="!#" target="_blank">
+								<Link to="!#" target="_blank">
 									<i className="fa fa-envelope"></i>
 								</Link>
 							</li>
@@ -129,10 +129,7 @@ const Footer = () => {
 				</div>
 				<div className="row">
 					<div className="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center">
-						<p className="h6">
-							© All right Reversed.
-							<Link className="text-green ml-2">Valiosa Company Limited</Link>
-						</p>
+						<p className="h6">© All right Reversed. Valiosa Company Limited</p>
 					</div>
 					<hr />
 				</div>

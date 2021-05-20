@@ -2,7 +2,9 @@ import React from 'react';
 
 const HighlightInfo = () => {
 	return (
-		<div className="highlight-bg row align-items-center" data-aos="fade-right">
+		<div
+			className="highlight-bg row align-items-center mb-4"
+			data-aos="fade-right">
 			<div className="col highlights-banner container row pr-0 pl-0">
 				<div className="highlight-info col">
 					<div className="highlights-banners-icon">

@@ -2,13 +2,13 @@ import React from 'react';
 
 const Advert = () => {
 	return (
-		<section className="p-4 text-center mb-4  mt-4" data-aos="fade-right">
+		<section className="p-4 text-center mb-2  mt-4 hide" data-aos="fade-right">
 			<div className="container advert-container">
 				<div className="advert">
-					<div class="overlay"></div>
+					<div className="overlay"></div>
 					<video
-						playsinline="playsinline"
-						autoplay="autoplay"
+						playsInline="playsinline"
+						autoPlay="autoplay"
 						muted="muted"
 						loop="loop">
 						<source src="/videos/intro.mp4" type="video/mp4" />
