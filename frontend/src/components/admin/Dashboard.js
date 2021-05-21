@@ -56,7 +56,7 @@ const Dashboard = () => {
 											<div className="text-center card-font-size">
 												Total Amount
 												<br />{' '}
-												<b>kes {totalAmount && totalAmount.toFixed(2)}/=</b>
+												<b>kes {totalAmount && totalAmount.toFixed(2)} /=</b>
 											</div>
 										</div>
 									</div>
