@@ -67,14 +67,13 @@ const HighlightInfo = () => {
 					<div className="highlights-banners-text">
 						<span className="highlights-banners-heading">Ship Assured</span>
 
-						<p>Deliveries on time, with care.</p>
+						<p>Deliveries on time with care</p>
 					</div>
 				</div>
 
 				<div className=" highlight-info col">
 					<div className="highlights-banners-icon">
 						<svg
-							className="icon-cell-phone "
 							aria-hidden="true"
 							focusable="false"
 							role="presentation"
@@ -124,6 +123,39 @@ const HighlightInfo = () => {
 						<p>+254 707 283342</p>
 					</div>
 				</div>
+				<div className="highlight-info col">
+					<div className="highlights-banners-icon">
+						<svg
+							className="icon-chat "
+							aria-hidden="true"
+							focusable="false"
+							role="presentation"
+							xmlns="http://www.w3.org/2000/svg"
+							width="44"
+							height="44"
+							viewBox="0 0 44 44"
+							fill="none">
+							<title>secure payment</title>
+							<path
+								d="M1 5h22M1 9h22M9 17H3c-1.105 0-2-.895-2-2V3c0-1.105.895-2 2-2h18c1.105 0 2 .895 2 2v10M5 13h5"
+								stroke="#ca76d8"
+								strokeWidth="1.75"
+								strokeLinecap="square"
+								strokeLinejoin="round"></path>
+							<path
+								d="M13 16h8v7h-8zM15 16v-2c0-1.1.9-2 2-2s2 .9 2 2v2M17 19v1"
+								stroke="#fff"
+								strokeWidth="1.75"
+								strokeLinecap="square"
+								strokeLinejoin="round"></path>
+						</svg>
+					</div>
+					<div className="highlights-banners-text">
+						<span className="highlights-banners-heading">Secure payments</span>
+
+						<p>M-Pesa or Cash on Pickup</p>
+					</div>
+				</div>
 
 				<div className="highlight-info col">
 					<div className="highlights-banners-icon">
@@ -154,7 +186,7 @@ const HighlightInfo = () => {
 					<div className="highlights-banners-text">
 						<span className="highlights-banners-heading">Chat with Us</span>
 
-						<p>We are happy to help.</p>
+						<p>We are happy to help</p>
 					</div>
 				</div>
 			</div>

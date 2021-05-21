@@ -3,7 +3,11 @@
 	background-color: #390375;
 	width: 100%;
 	font-size: 12px;
+	font-weight: 600;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
 	font-family: inherit !important;
+	color: #fff;
 }
 
 .top-bar ul {
@@ -20,10 +24,6 @@
 .text-tob-bar {
 	color: #fff;
 	list-style: none;
-}
-.text-tob-bar-container {
-	margin-top: auto !important;
-	margin-bottom: auto !important;
 }
 .header-extra-menu li {
 	list-style: none;
@@ -46,10 +46,17 @@
 .bg {
 	background-color: #f5f5f5;
 }
-.col-margin {
-	padding-left: 0 !important;
-	padding-right: 0 !important;
-	max-width: 80% !important;
+
+/*Anouncement-bar*/
+.announcement-bar-inner {
+	align-items: center;
+}
+.announcement-bar-content {
+	display: block;
+}
+
+.announcement-bar-login {
+	margin-left: auto;
 }
 
 /***********IMPORTED CSS FILE ******************/
@@ -77,26 +84,24 @@ nav {
 
 #search_btn {
 	background-color: #ca76d8;
-	border-top-right-radius: 2rem;
-	border-bottom-right-radius: 2rem;
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
+	border-radius: 0 3px 3px 0;
 }
 
 .input-group {
-	width: 90%;
-	margin-right: 35%;
+	margin-top: 35px;
 }
 
 #search_field {
 	height: 2.4rem;
 	padding: 1rem;
+	border-radius: 3px 0 0 3px;
 }
 
 #login_btn,
 #view_btn {
 	background-color: #ca76d8;
 	font-family: calibri;
+	border-radius: 0;
 }
 
 #cart {
@@ -1209,16 +1214,23 @@ figure.photo.hover:before {
 
 /************MEDIA_QUERIES********************************/
 @media screen and (max-width: 800px) {
-	.top-bar {
-		font-size: 10px;
-	}
 	.navbar-brand {
 		margin-bottom: 0.5rem;
 	}
 	.category {
 		display: none;
 	}
-	.hide {
+	.hide,
+	.hidden-phone {
 		display: none !important;
+	}
+	.announcement-bar-content {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media screen and (max-width: 576px) {
+	.input-group {
+		margin-top: 0;
 	}
 }
