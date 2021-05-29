@@ -39,125 +39,178 @@ const Cart = ({ history }) => {
 		<Fragment>
 			<div className="container">
 				<MetaData title={'Your Cart'} />
-				{cartItems.length === 0 ? (
-					<h2 className="mt-5">Your Cart is Empty</h2>
-				) : (
-					<Fragment>
-						<h2 className="mt-5">
-							Your Cart: <b>{cartItems.length} items</b>
-						</h2>
+				{cartItems.length > 0 ? (
+					<section className="cart-section section-b-space">
+						<div className="container">
+							<div className="row">
+								<div className="col-sm-12">
+									<table className="table cart-table table-responsive-xs">
+										<thead>
+											<tr className="table-head">
+												<th scope="col">image</th>
+												<th scope="col">product name</th>
+												<th scope="col">price</th>
+												<th scope="col">quantity</th>
+												<th scope="col">action</th>
+												<th scope="col">total</th>
+											</tr>
+										</thead>
+										{cartItems.map((item) => (
+											<tbody key={item.product}>
+												<tr>
+													<td>
+														<Link to={`/product/${item.product}`}>
+															<img src={item.image} alt={item.name} />
+														</Link>
+													</td>
+													<td>
+														<Link to={`/product/${item.product}`}>
+															{item.name}
+														</Link>
+														<div className="mobile-cart-content row">
+															<div className="col-xs-3">
+																<div className="qty-box">
+																	<div className="input-group">
+																		<input
+																			type="text"
+																			name="quantity"
+																			className="form-control input-number"
+																			value={item.quantity}
+																			readOnly
+																		/>
+																	</div>
+																</div>
+															</div>
+															<div className="col-xs-3">
+																<h2 className="td-color">
+																	kes
+																	{item.price}
+																</h2>
+															</div>
+															<div className="col-xs-3">
+																<h2 className="td-color">
+																	<button
+																		className="icon"
+																		onClick={() =>
+																			removeCartItemHandler(item.product)
+																		}>
+																		<i className="icon-close"></i>
+																	</button>
+																</h2>
+															</div>
+														</div>
+													</td>
+													<td>
+														<h2>
+															kes
+															{item.price}
+														</h2>
+													</td>
+													<td>
+														<div className="qty-box">
+															<div className="input-group">
+																<span className="input-group-prepend">
+																	<button
+																		type="button"
+																		className="btn quantity-left-minus"
+																		onClick={() =>
+																			decreaseQty(item.product, item.quantity)
+																		}
+																		data-type="minus"
+																		data-field="">
+																		<i className="fa fa-angle-left"></i>
+																	</button>
+																</span>
+																<input
+																	type="text"
+																	name="quantity"
+																	value={item.quantity}
+																	readOnly={true}
+																	className="form-control input-number"
+																/>
 
-						<div className="row d-flex justify-content-between">
-							<div className="col-12 col-lg-8">
-								{cartItems.map((item) => (
-									<Fragment>
-										<hr />
-
-										<div className="cart-item" key={item.product}>
-											<div className="row">
-												<div className="col-4 col-lg-3">
-													<img
-														src={item.image}
-														alt="Laptop"
-														height="90px"
-														width="115px"
-													/>
-												</div>
-
-												<div className="col-5 col-lg-3">
-													<Link to={`/products/${item.product}`}>
-														{item.name}
-													</Link>
-												</div>
-
-												<div className="col-4 col-lg-2 mt-4 mt-lg-0">
-													<p id="card_item_price">kes {item.price}/=</p>
-												</div>
-
-												<div className="col-4 col-lg-3 mt-4 mt-lg-0">
-													<div className="stockCounter d-inline">
-														<span
-															className="btn btn-danger minus"
-															onClick={() =>
-																decreaseQty(item.product, item.quantity)
-															}>
-															-
-														</span>
-
-														<input
-															type="number"
-															className="form-control count d-inline"
-															value={item.quantity}
-															readOnly
-														/>
-
-														<span
-															className="btn btn-primary plus"
-															onClick={() =>
-																increaseQty(
-																	item.product,
-																	item.quantity,
-																	item.stock
-																)
-															}>
-															+
-														</span>
-													</div>
-												</div>
-
-												<div className="col-4 col-lg-1 mt-4 mt-lg-0">
-													<i
-														id="delete_cart_item"
-														className="fa fa-trash btn btn-danger"
-														onClick={() =>
-															removeCartItemHandler(item.product)
-														}></i>
-												</div>
-											</div>
-										</div>
-										<hr />
-									</Fragment>
-								))}
+																<span className="input-group-prepend">
+																	<button
+																		className="btn quantity-right-plus"
+																		onClick={() =>
+																			increaseQty(
+																				item.product,
+																				item.quantity,
+																				item.stock
+																			)
+																		}
+																		data-type="plus"
+																		disabled={
+																			item.qty >= item.stock ? true : false
+																		}>
+																		<i className="fa fa-angle-right"></i>
+																	</button>
+																</span>
+															</div>
+														</div>
+														{item.qty >= item.stock ? 'out of Stock' : ''}
+													</td>
+													<td>
+														<button
+															href="#"
+															className="icon"
+															onClick={removeCartItemHandler}>
+															<i className="fa fa-times"></i>
+														</button>
+													</td>
+													<td>
+														<h2 className="td-color">
+															kes
+															{item.price}
+														</h2>
+													</td>
+												</tr>
+											</tbody>
+										))}
+									</table>
+									<table className="table cart-table table-responsive-md">
+										<tfoot>
+											<tr>
+												<td>total price :</td>
+												<td>
+													<h2>price</h2>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
 							</div>
-
-							<div className="col-12 col-lg-3 my-4">
-								<div id="order_summary">
-									<h4>Order Summary</h4>
-									<hr />
-									<p>
-										Subtotal:{' '}
-										<span className="order-summary-values">
-											{cartItems.reduce(
-												(acc, item) => acc + Number(item.quantity),
-												0
-											)}{' '}
-											(Units)
-										</span>
-									</p>
-									<p>
-										Est. total:{' '}
-										<span className="order-summary-values">
-											$
-											{cartItems
-												.reduce(
-													(acc, item) => acc + item.quantity * item.price,
-													0
-												)
-												.toFixed(2)}
-										</span>
-									</p>
-
-									<hr />
-									<button
-										id="checkout_btn"
-										className="btn btn-primary btn-block"
-										onClick={checkoutHandler}>
-										Check out
+							<div className="row cart-buttons">
+								<div className="col-6">
+									<Link to="/home" className="btn btn-solid">
+										continue shopping
+									</Link>
+								</div>
+								<div className="col-6">
+									<button className="btn btn-solid" onClick={checkoutHandler}>
+										check out
 									</button>
 								</div>
 							</div>
 						</div>
-					</Fragment>
+					</section>
+				) : (
+					<section className="cart-section section-b-space">
+						<div className="container">
+							<div className="row">
+								<div className="col-sm-12">
+									<div>
+										<div className="col-sm-12 empty-cart-cls text-center">
+											<h3>
+												<strong>Your Cart is Empty</strong>
+											</h3>
+											<h4>Explore more shortlist some items.</h4>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 				)}
 			</div>
 		</Fragment>

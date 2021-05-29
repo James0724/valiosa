@@ -1,75 +1,65 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './product.css';
+
+import { useDispatch } from 'react-redux';
+import { useAlert } from 'react-alert';
+import { addItemToCart } from '../../actions/cartActions';
 
 const Product = ({ product, col }) => {
+	const dispatch = useDispatch();
+	const alert = useAlert();
+	const matchParams = product._id;
+	const addToCart = () => {
+		dispatch(addItemToCart(matchParams));
+		alert.success('Item Added to Cart');
+	};
 	return (
 		<div className={`col-sm-8 col-md-3 col-lg-${col} my-2`}>
-			<article className="col-item card p-1 rounded text-center">
-				<div className="photo">
-					<div className="options-cart-round">
-						<button className="btn btn-default" title="Add to cart">
-							<span className="fa fa-shopping-cart"></span>
-						</button>
+			<div className="row">
+				<div className="product-grid5">
+					<div className="product-image5">
+						<Link to={`/product/${product._id}`}>
+							<img
+								src={product.images[0].url}
+								className="img-responsive"
+								alt={product.name}
+							/>
+						</Link>
+						<ul className="social">
+							<li>
+								<Link className="details" to={`/product/${product._id}`}>
+									<i className="fa fa-search"></i>
+								</Link>
+							</li>
+							<li>
+								<Link to="" data-tip="Add to Wishlist">
+									<i className="fa fa-shopping-bag"></i>
+								</Link>
+							</li>
+
+							<li>
+								<Link data-tip="Add to Cart" onClick={addToCart}>
+									<i className="fa fa-shopping-cart"></i>
+								</Link>
+							</li>
+						</ul>
 					</div>
-					<Link to={`/product/${product._id}`}>
-						<img
-							src={product.images[0].url}
-							className="img-responsive"
-							alt={product.name}
-						/>
-					</Link>
-				</div>
-				<div className="info mt-2">
-					<div className="row text-center">
-						<h5 className="card-title">
+					<div className="product-content">
+						<h3 className="title">
 							<Link className="details" to={`/product/${product._id}`}>
 								{product.name}
 							</Link>
-						</h5>
-					</div>
-					<div className="text-center">
-						<p className="card-text text-center">kes {product.price}/=</p>
-					</div>
-					<Link
-						to={`/product/${product._id}`}
-						id="view_btn"
-						className="btn btn-block mt-3">
-						View
-					</Link>
-				</div>
-			</article>
-			{/* <div className="card p-3 rounded ">
-				<div className="card-img">
-					<img
-						className="card-img-top mx-auto"
-						src={product.images[0].url}
-						alt={product.name}
-					/>
-					<div className="middle">
-						<div className="text">Add to cart</div>
-					</div>
-				</div>
-				<div className="card-body d-flex flex-column">
-					<h5 className="card-title">
-						<Link to={`/product/${product._id}`}>{product.name}</Link>
-					</h5>
-					<div className="ratings mt-auto">
+						</h3>
+						<div className="price">kes {product.price}</div>
 						<div className="rating-outer">
 							<div
 								className="rating-inner"
 								style={{ width: `${(product.ratings / 5) * 100}%` }}></div>
 						</div>
-						<span id="no_of_reviews">({product.numOfReviews} Reviews)</span>
 					</div>
-					<p className="card-text">kes {product.price}/=</p>
-					<Link
-						to={`/product/${product._id}`}
-						id="view_btn"
-						className="btn btn-block">
-						View Details
-					</Link>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };

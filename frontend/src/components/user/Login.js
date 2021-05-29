@@ -44,128 +44,58 @@ const Login = ({ history, location }) => {
 			) : (
 				<Fragment>
 					<MetaData title={'Login'} />
-
-					<div className="container h-100 margin-login">
-						<div className="d-flex justify-content-center h-100">
-							<div className="user_card">
-								<div className="d-flex justify-content-center">
-									<div className="brand_logo_container">
-										<img
-											src="/images/Valiosa_logo.png"
-											alt="logo"
-											className="brand_logo"
-										/>
-									</div>
-								</div>
-								<div className="d-flex justify-content-center form_container">
-									<form onSubmit={submitHandler}>
-										<div className="input-group mb-3">
-											<div className="input-group-append">
-												<span className="input-group-text">
-													<i className="bi bi-person"></i>
-												</span>
+					<section className="login-page  mt-5 mb-5 section-b-space">
+						<div className="container  login-bg">
+							<div className="row">
+								<div className="col-lg-6">
+									<h3>Login</h3>
+									<div className="theme-card">
+										<form className="theme-form" onSubmit={submitHandler}>
+											<div className="form-group">
+												<label htmlFor="email">Email</label>
+												<input
+													type="text"
+													className="form-control"
+													id="email"
+													placeholder="Email"
+													value={email}
+													onChange={(e) => setEmail(e.target.value)}
+												/>
 											</div>
-											<input
-												type="text"
-												name=""
-												className="form-control input_user"
-												value={email}
-												onChange={(e) => setEmail(e.target.value)}
-												placeholder="Email"
-											/>
-										</div>
-										<div className="input-group mb-2">
-											<div className="input-group-append">
-												<span className="input-group-text">
-													<i className="fa fa-key"></i>
-												</span>
+											<div className="form-group">
+												<label htmlFor="review">Password</label>
+												<input
+													type="password"
+													className="form-control"
+													id="review"
+													placeholder="Enter your password"
+													value={password}
+													onChange={(e) => setPassword(e.target.value)}
+												/>
 											</div>
-											<input
-												type="password"
-												name=""
-												className="form-control input_pass"
-												value={password}
-												onChange={(e) => setPassword(e.target.value)}
-												placeholder="password"
-											/>
-										</div>
-
-										<div className="d-flex justify-content-center mt-3 login_container">
-											<button
-												id="login_button"
-												type="submit"
-												className="btn btn-block login_btn">
+											<button className="btn btn-solid" onClick={submitHandler}>
 												Login
 											</button>
-										</div>
-									</form>
-								</div>
-
-								<div className="mt-4">
-									<div
-										className="d-flex justify-content-center links"
-										style={{ color: 'white' }}>
-										Don't have an account?
-										<Link
-											style={{ color: '#ca76d8' }}
-											to="/register"
-											className="ml-2">
-											Sign Up
-										</Link>
+										</form>
 									</div>
-									<div className="d-flex justify-content-center links">
-										<Link style={{ color: '#ca76d8' }} to="/password/forgot">
-											Forgot your password?
+								</div>
+								<div className="col-lg-6 right-login">
+									<h3>New Customer</h3>
+									<div className="theme-card authentication-right">
+										<h6 className="title-font">Create Account</h6>
+										<p>
+											Sign up for a free account at our store. Registration is
+											quick and easy. It allows you to be able to order from our
+											shop.
+										</p>
+										<Link to="/register" className="btn btn-solid">
+											Create an Account
 										</Link>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-
-					{/* <div className="row wrapper">
-						<div className="col-10 col-lg-5">
-							<form className="shadow-lg" onSubmit={submitHandler}>
-								<h1 className="mb-3">Login</h1>
-								<div className="form-group">
-									<label htmlFor="email_field">Email</label>
-									<input
-										type="email"
-										id="email_field"
-										className="form-control"
-										value={email}
-										onChange={(e) => setEmail(e.target.value)}
-									/>
-								</div>
-
-								<div className="form-group">
-									<label htmlFor="password_field">Password</label>
-									<input
-										type="password"
-										id="password_field"
-										className="form-control"
-										value={password}
-										onChange={(e) => setPassword(e.target.value)}
-									/>
-								</div>
-
-								<Link to="/password/forgot" className="float-right mb-4">
-									Forgot Password?
-								</Link>
-
-								<button
-									id="login_button"
-									type="submit"
-									className="btn btn-block py-3">
-									LOGIN
-								</button>
-
-								<Link to="/register" className="float-right mt-3">
-									New User?
-								</Link>
-							</form>
-						</div>
-					</div> */}
+					</section>
 				</Fragment>
 			)}
 		</Fragment>

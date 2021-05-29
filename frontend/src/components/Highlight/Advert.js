@@ -15,40 +15,6 @@ const Advert = () => {
 					</video>
 				</div>
 			</div>
-			{/* <div className="row justify-content-center">
-				<div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-					<img
-						src="/images/advert8.jpg"
-						className="w-100 image-fluid shadow rounded mb-2"
-						alt=""
-						style={{ height: '40rem' }}
-					/>
-				</div>
-
-				<div className="col-lg-4 mb-lg-0">
-					<img
-						src="/images/advert2.jpg"
-						className="w-100 shadow rounded mb-4"
-						alt=""
-						style={{ height: '19rem' }}
-					/>
-
-					<img
-						src="/images/advert3.jpg"
-						className="w-100 shadow rounded"
-						alt=""
-						style={{ height: '19rem' }}
-					/>
-				</div>
-				<div className="col-lg-4 col-md-12 mb-lg-0">
-					<img
-						src="/images/advert4.jpg"
-						className="w-100 shadow rounded mb-2"
-						alt=""
-						style={{ height: '40rem' }}
-					/>
-				</div>
-			</div> */}
 		</section>
 	);
 };

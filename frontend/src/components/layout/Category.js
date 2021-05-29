@@ -4,7 +4,10 @@ import { Link } from 'react-router-dom';
 const Category = () => {
 	return (
 		<section data-aos="fade-left" className="category">
-			<h4 className="pl-15">Shop by Category</h4>
+			<div className="title1">
+				<h4>Our Collections</h4>
+				<h2 className="title-inner1">Shop by category</h2>
+			</div>
 			<div className="row">
 				<div className="col mb-lg-0">
 					<figure className="photo purple">
@@ -23,7 +26,7 @@ const Category = () => {
 				</div>
 				<div className="col mb-lg-0">
 					<figure className="photo blue">
-						<img src="/images/advert3.jpg" className="w-100" alt="IT" />
+						<img src="/images/it.jpg" className="w-100" alt="IT" />
 						<figcaption>
 							<h2>
 								<span>IT</span>
@@ -35,7 +38,7 @@ const Category = () => {
 				<div className="col mb-lg-0">
 					<figure className="photo purple">
 						<img
-							src="/images/Branding.jpg"
+							src="/images/furniture.jpg"
 							className="w-100"
 							alt="Furnitures"
 						/>
@@ -49,7 +52,12 @@ const Category = () => {
 				</div>
 				<div className="col mb-lg-0">
 					<figure className="photo blue">
-						<img src="/images/advert3.jpg" className="w-100" alt="IT" />
+						<img
+							src="/images/branding.jpg"
+							className="w-100"
+							alt="branding"
+							style={{ height: '170px' }}
+						/>
 						<figcaption>
 							<h2>
 								<span>Branding</span>
