@@ -21,7 +21,7 @@ export const cartReducer = (
 					...state,
 					cartItems: state.cartItems.map((i) =>
 						i.product === isItemExist.product ? item : i
-					),
+					), 
 				};
 			} else {
 				return {

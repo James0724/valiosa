@@ -3,9 +3,9 @@ import React from 'react';
 const HighlightInfo = () => {
 	return (
 		<section
-			className="highlight-bg row align-items-center mb-4"
+			className=" row d-flex justify-content-center"
 			data-aos="fade-right">
-			<div className="border-section highlights-banner container row">
+			<div className="border-section highlights-banner highlight-bg container row">
 				<div className="highlight-info col-md-4 ">
 					<div className="highlights-banners-icon">
 						<svg
@@ -64,8 +64,10 @@ const HighlightInfo = () => {
 						</svg>
 					</div>
 					<div className="highlight-info-body">
-						<h4>SHIP ASSURED</h4>
+					<div className="d-block text-center">
+						<h6>SHIP ASSURED</h6>
 						<p>Deliveries On Time With Care</p>
+						</div>
 					</div>
 				</div>
 
@@ -96,8 +98,10 @@ const HighlightInfo = () => {
 					</div>
 
 					<div className="highlight-info-body">
-						<h4>SEASON OFFERS</h4>
-						<p>New Online Special Back To School Season Offer</p>
+					<div className="d-block text-center">
+						<h6>SEASON OFFERS</h6>
+						<p>Get The Best Special  Season Offer</p>
+					</div>
 					</div>
 				</div>
 
@@ -126,10 +130,11 @@ const HighlightInfo = () => {
 								fill="#ca76d8"></path>{' '}
 						</svg>
 					</div>
-
 					<div className="highlight-info-body">
-						<h4>CHAT WITH US</h4>
+					<div className="d-block text-center">
+						<h6>CHAT WITH US</h6>
 						<p>We Are Happy To Help</p>
+					</div>
 					</div>
 				</div>
 			</div>

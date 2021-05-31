@@ -42,7 +42,7 @@ class Clients extends Component {
 			],
 		};
 		return (
-			<div className="container">
+			<div className="container" mt-3 mb-3>
 				<div className="title1">
 					<h4>Special Thanks to</h4>
 					<h2 className="title-inner1">Our Clients</h2>

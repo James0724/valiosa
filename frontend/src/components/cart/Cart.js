@@ -83,68 +83,54 @@ const Cart = ({ history }) => {
 															</div>
 															<div className="col-xs-3">
 																<h2 className="td-color">
-																	kes
-																	{item.price}
+																	ksh
+																	{item.price}/=
 																</h2>
 															</div>
 															<div className="col-xs-3">
 																<h2 className="td-color">
-																	<button
+																	<Link
 																		className="icon"
 																		onClick={() =>
 																			removeCartItemHandler(item.product)
 																		}>
-																		<i className="icon-close"></i>
-																	</button>
+																		<i className="fa fa-times "></i>
+																	</Link>
 																</h2>
 															</div>
 														</div>
 													</td>
 													<td>
-														<h2>
-															kes
-															{item.price}
-														</h2>
+														<h2>ksh {item.price}/=</h2>
 													</td>
 													<td>
 														<div className="qty-box">
-															<div className="input-group">
-																<span className="input-group-prepend">
-																	<button
-																		type="button"
-																		className="btn quantity-left-minus"
-																		onClick={() =>
-																			decreaseQty(item.product, item.quantity)
-																		}
-																		data-type="minus"
-																		data-field="">
-																		<i className="fa fa-angle-left"></i>
-																	</button>
+															<div className="stockCounter d-inline">
+																<span
+																	className="btn btn-danger minus"
+																	onClick={() =>
+																		decreaseQty(item.product, item.quantity)
+																	}>
+																	-
 																</span>
+
 																<input
-																	type="text"
-																	name="quantity"
+																	type="number"
+																	className="form-control count d-inline"
 																	value={item.quantity}
-																	readOnly={true}
-																	className="form-control input-number"
+																	readOnly
 																/>
 
-																<span className="input-group-prepend">
-																	<button
-																		className="btn quantity-right-plus"
-																		onClick={() =>
-																			increaseQty(
-																				item.product,
-																				item.quantity,
-																				item.stock
-																			)
-																		}
-																		data-type="plus"
-																		disabled={
-																			item.qty >= item.stock ? true : false
-																		}>
-																		<i className="fa fa-angle-right"></i>
-																	</button>
+																<span
+																	className="btn btn-primary plus"
+																	onClick={() =>
+																		increaseQty(
+																			item.product,
+																			item.quantity,
+																			item.stock
+																		)
+																	}>
+																	+
 																</span>
 															</div>
 														</div>
@@ -152,16 +138,17 @@ const Cart = ({ history }) => {
 													</td>
 													<td>
 														<button
-															href="#"
-															className="icon"
-															onClick={removeCartItemHandler}>
+															id="delete_cart_item"
+															className=" btn btn-danger"
+															onClick={() =>
+																removeCartItemHandler(item.product)
+															}>
 															<i className="fa fa-times"></i>
 														</button>
 													</td>
 													<td>
 														<h2 className="td-color">
-															kes
-															{item.price}
+															ksh {Number(item.quantity) * Number(item.price)}/=
 														</h2>
 													</td>
 												</tr>
@@ -171,9 +158,19 @@ const Cart = ({ history }) => {
 									<table className="table cart-table table-responsive-md">
 										<tfoot>
 											<tr>
-												<td>total price :</td>
+												<td>total price </td>
 												<td>
-													<h2>price</h2>
+													<h2>
+														{cartItems
+															.reduce(
+																(acc, item) =>
+																	acc +
+																	Number(item.quantity) * Number(item.price),
+																0
+															)
+															.toFixed(2)}
+														/=
+													</h2>
 												</td>
 											</tr>
 										</tfoot>

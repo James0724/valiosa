@@ -53,6 +53,21 @@ const TopBar = () => {
 								</div>
 								<div className="col-lg-6 text-right">
 									<ul className="header-dropdown ">
+										<li className="toggle-nav " onClick={() => activeClass()}>
+											<div id="btn">
+												<div id="top"></div>
+												<div id="middle"></div>
+												<div id="bottom"></div>
+											</div>
+											<div id="box">
+												<div id="items">
+													<div className="item">Stationery</div>
+													<div className="item">Furniture</div>
+													<div className="item">Furniture</div>
+													<div className="item">Branding</div>
+												</div>
+											</div>
+										</li>
 										<li className=" hidden-phone mobile-wishlist ">
 											<Link to="account/wishlist">
 												<i className="fa fa-heart" aria-hidden="true"></i>

@@ -42,7 +42,7 @@ const Footer = () => {
 					<div className="container">
 						<div className="row footer-theme">
 							<div className="col-lg-4 col-md-6">
-								<div className="footer-contant-bg mt-2 ">
+								<div className=" mt-2 ">
 									<div className="footer-logo">
 										<div className="col-sm text-center">
 											<h1>
@@ -95,11 +95,10 @@ const Footer = () => {
 							</div>
 							<div className="col-sm ">
 								<div className="sub-title">
-									<div className="footer-title">
-										<h4>About us</h4>
-									</div>
+									
 									<div className="footer-contant">
 										<ul>
+										   <li><h4 className="footer-title" >About us</h4></li>
 											<li>
 												<Link to="!#">Our story</Link>
 											</li>
@@ -118,11 +117,10 @@ const Footer = () => {
 							</div>
 							<div className="col-sm">
 								<div className="sub-title">
-									<div className="footer-title">
-										<h4>Customer Service</h4>
-									</div>
+								
 									<div className="footer-contant">
 										<ul>
+										   <li><h4 className="footer-title">Customer Service</h4></li>
 											<li>
 												<Link to="#">shipping & return</Link>
 											</li>
@@ -144,11 +142,13 @@ const Footer = () => {
 							</div>
 							<div className="col-sm">
 								<div className="sub-title">
-									<div className="footer-title">
+									{/* <div className="footer-title">
 										<h4>store information</h4>
-									</div>
+									</div> */}
 									<div className="footer-contant">
 										<ul className="contact-list">
+
+										<li><h4 className="footer-title">store information</h4></li>
 											<li>
 												<i className="fa fa-map-marker"></i>NAIROBI
 											</li>

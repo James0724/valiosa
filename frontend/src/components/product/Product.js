@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './product.css';
 
@@ -9,11 +9,23 @@ import { addItemToCart } from '../../actions/cartActions';
 const Product = ({ product, col }) => {
 	const dispatch = useDispatch();
 	const alert = useAlert();
+
+	const [quantity, setQuantity] = useState(1);
+
 	const matchParams = product._id;
 	const addToCart = () => {
-		dispatch(addItemToCart(matchParams));
+		dispatch(addItemToCart(matchParams, quantity));
 		alert.success('Item Added to Cart');
 	};
+
+	const addQuantity = () => {
+		const count = document.querySelector('.count');
+		if (count.valueAsNumber >= product.stock) return;
+
+		const qty = count.valueAsNumber + 1;
+		setQuantity(qty);
+	};
+
 	return (
 		<div className={`col-sm-8 col-md-3 col-lg-${col} my-2`}>
 			<div className="row">
@@ -41,6 +53,15 @@ const Product = ({ product, col }) => {
 							<li>
 								<Link data-tip="Add to Cart" onClick={addToCart}>
 									<i className="fa fa-shopping-cart"></i>
+									<div style={{ display: 'none' }}>
+										<input
+											onClick={addQuantity}
+											type="number"
+											className="form-control count d-inline"
+											value={quantity}
+											readOnly
+										/>
+									</div>
 								</Link>
 							</li>
 						</ul>
@@ -51,7 +72,7 @@ const Product = ({ product, col }) => {
 								{product.name}
 							</Link>
 						</h3>
-						<div className="price">kes {product.price}</div>
+						<div className="price">ksh {product.price}/=</div>
 						<div className="rating-outer">
 							<div
 								className="rating-inner"
