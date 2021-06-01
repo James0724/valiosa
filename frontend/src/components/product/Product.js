@@ -44,11 +44,6 @@ const Product = ({ product, col }) => {
 									<i className="fa fa-search"></i>
 								</Link>
 							</li>
-							<li>
-								<Link to="" data-tip="Add to Wishlist">
-									<i className="fa fa-shopping-bag"></i>
-								</Link>
-							</li>
 
 							<li>
 								<Link data-tip="Add to Cart" onClick={addToCart}>

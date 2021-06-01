@@ -53,26 +53,80 @@ const TopBar = () => {
 								</div>
 								<div className="col-lg-6 text-right">
 									<ul className="header-dropdown ">
-										<li className="toggle-nav " onClick={() => activeClass()}>
-											<div id="btn">
-												<div id="top"></div>
-												<div id="middle"></div>
-												<div id="bottom"></div>
-											</div>
-											<div id="box">
-												<div id="items">
-													<div className="item">Stationery</div>
-													<div className="item">Furniture</div>
-													<div className="item">Furniture</div>
-													<div className="item">Branding</div>
+										{user && user.role === 'admin' ? (
+											<li className="toggle-nav " onClick={() => activeClass()}>
+												<div id="btn">
+													<div id="top"></div>
+													<div id="middle"></div>
+													<div id="bottom"></div>
 												</div>
-											</div>
-										</li>
+												<div id="box">
+													<div id="items">
+														<ul className="list-unstyled components">
+															<li className="item">
+																<Link to="/dashboard">
+																	<i className="fa fa-tachometer"></i> Dashboard
+																</Link>
+															</li>
+															<li className="item">
+																<li>
+																	<Link to="/admin/products">
+																		<i className="fa fa-clipboard"></i> All
+																		Products
+																	</Link>
+																</li>
+															</li>
+															<li className="item">
+																<li>
+																	<li>
+																		<Link to="/admin/product">
+																			<i className="fa fa-plus"></i> Create
+																			Product
+																		</Link>
+																	</li>
+																</li>
+															</li>
+
+															<li className="item">
+																<Link to="/admin/orders">
+																	<i className="fa fa-shopping-basket"></i>{' '}
+																	Orders
+																</Link>
+															</li>
+															<li className="item">
+																<Link to="/admin/users">
+																	<i className="fa fa-users"></i> Users
+																</Link>
+															</li>
+															<li className="item">
+																<Link to="/admin/reviews">
+																	<i className="fa fa-star"></i> Reviews
+																</Link>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</li>
+										) : (
+											<li className="toggle-nav " onClick={() => activeClass()}>
+												<div id="btn">
+													<div id="top"></div>
+													<div id="middle"></div>
+													<div id="bottom"></div>
+												</div>
+												<div id="box">
+													<div id="items">
+														<div className="item">Stationery</div>
+														<div className="item">Furniture</div>
+														<div className="item">Furniture</div>
+														<div className="item">Branding</div>
+													</div>
+												</div>
+											</li>
+										)}
 										<li className=" hidden-phone mobile-wishlist ">
-											<Link to="account/wishlist">
-												<i className="fa fa-heart" aria-hidden="true"></i>
-												Wishlist
-											</Link>
+											<i className="fa fa-heart" aria-hidden="true"></i>
+											Wishlist
 										</li>
 										<li className="onhover-dropdown mobile-account">
 											<i className="fa fa-user" aria-hidden="true"></i>
@@ -165,10 +219,8 @@ const TopBar = () => {
 											</div>
 										</li>
 										<li className="mobile-wishlist hidden-phone">
-											<Link to="account/wishlist ">
-												<i className="fa fa-heart" aria-hidden="true"></i>
-												Wishlist
-											</Link>
+											<i className="fa fa-heart" aria-hidden="true"></i>
+											Wishlist
 										</li>
 
 										<li className="onhover-dropdown mobile-account">

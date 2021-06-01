@@ -43,7 +43,7 @@ const Footer = () => {
 						<div className="row footer-theme">
 							<div className="col-lg-4 col-md-6">
 								<div className=" mt-2 ">
-									<div className="footer-logo">
+									{/* <div className="footer-logo">
 										<div className="col-sm text-center">
 											<h1>
 												<Link to="/">
@@ -55,10 +55,10 @@ const Footer = () => {
 												</Link>
 											</h1>
 										</div>
-									</div>
+									</div> */}
 									<p>
-										An excellence of wide range services we offer:Office &
-										School Stationery, IT, Furniture & Branding
+										We Offer An excellence of wide range services from Office,
+										School Stationery, IT, Furniture to Branding
 									</p>
 									<div className="footer-social">
 										<ul>
@@ -84,21 +84,17 @@ const Footer = () => {
 													<i className="fa fa-instagram" aria-hidden="true"></i>
 												</Link>
 											</li>
-											<li>
-												<Link to={'https://rss.com/'}>
-													<i className="fa fa-rss" aria-hidden="true"></i>
-												</Link>
-											</li>
 										</ul>
 									</div>
 								</div>
 							</div>
 							<div className="col-sm ">
 								<div className="sub-title">
-									
 									<div className="footer-contant">
 										<ul>
-										   <li><h4 className="footer-title" >About us</h4></li>
+											<li>
+												<h4 className="footer-title">About us</h4>
+											</li>
 											<li>
 												<Link to="!#">Our story</Link>
 											</li>
@@ -117,10 +113,11 @@ const Footer = () => {
 							</div>
 							<div className="col-sm">
 								<div className="sub-title">
-								
 									<div className="footer-contant">
 										<ul>
-										   <li><h4 className="footer-title">Customer Service</h4></li>
+											<li>
+												<h4 className="footer-title">Customer Service</h4>
+											</li>
 											<li>
 												<Link to="#">shipping & return</Link>
 											</li>
@@ -147,8 +144,9 @@ const Footer = () => {
 									</div> */}
 									<div className="footer-contant">
 										<ul className="contact-list">
-
-										<li><h4 className="footer-title">store information</h4></li>
+											<li>
+												<h4 className="footer-title">store information</h4>
+											</li>
 											<li>
 												<i className="fa fa-map-marker"></i>NAIROBI
 											</li>

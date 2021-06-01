@@ -71,20 +71,44 @@ const Cart = ({ history }) => {
 															<div className="col-xs-3">
 																<div className="qty-box">
 																	<div className="input-group">
-																		<input
-																			type="text"
-																			name="quantity"
-																			className="form-control input-number"
-																			value={item.quantity}
-																			readOnly
-																		/>
+																		<div className="stockCounter d-inline">
+																			<span
+																				className=" minus"
+																				onClick={() =>
+																					decreaseQty(
+																						item.product,
+																						item.quantity
+																					)
+																				}>
+																				-
+																			</span>
+
+																			<input
+																				type="text"
+																				name="quantity"
+																				className="form-control input-number"
+																				value={item.quantity}
+																				readOnly
+																			/>
+
+																			<span
+																				className=" plus"
+																				onClick={() =>
+																					increaseQty(
+																						item.product,
+																						item.quantity,
+																						item.stock
+																					)
+																				}>
+																				+
+																			</span>
+																		</div>
 																	</div>
 																</div>
 															</div>
 															<div className="col-xs-3">
 																<h2 className="td-color">
-																	ksh
-																	{item.price}/=
+																	{Number(item.quantity) * Number(item.price)}/=
 																</h2>
 															</div>
 															<div className="col-xs-3">
@@ -177,9 +201,9 @@ const Cart = ({ history }) => {
 									</table>
 								</div>
 							</div>
-							<div className="row cart-buttons">
+							<div className="row cart-buttons mb-3">
 								<div className="col-6">
-									<Link to="/home" className="btn btn-solid">
+									<Link to="/" className="btn btn-solid">
 										continue shopping
 									</Link>
 								</div>

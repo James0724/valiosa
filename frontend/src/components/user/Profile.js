@@ -15,49 +15,45 @@ const Profile = () => {
 					<Loader />
 				) : (
 					<Fragment>
-						<MetaData title={'Your Profile'} />
+						<div className="container shadow bg">
+							<MetaData title={'Your Profile'} />
 
-						<h2 className="mt-5 ml-5">My Profile</h2>
-						<div className="row justify-content-around mt-5 user-info mb-4">
-							<div className="col-12 col-md-3">
-								<figure className="avatar avatar-profile">
-									<img
-										className="rounded-circle img-fluid"
-										src={user.avatar.url}
-										alt={user.name}
-									/>
-								</figure>
-								<Link
-									to="/me/update"
-									id="edit_profile"
-									className="btn btn-primary btn-block my-5">
-									Edit Profile
-								</Link>
+							<div className="title1 mt-3 pt-2">
+								<h4>Your</h4>
+								<h2 className="title-inner1">Profile Page</h2>
 							</div>
-
-							<div className="col-12 col-md-5">
-								<h4>Full Name</h4>
-								<p>{user.name}</p>
-
-								<h4>Email Address</h4>
-								<p>{user.email}</p>
-
-								<h4>Joined On</h4>
-								<p>{String(user.createdAt).substring(0, 10)}</p>
-
-								{user.role !== 'admin' && (
+							<div className="row justify-content-around mt-5 user-info mb-4">
+								<div className="col-12 col-md-3">
 									<Link
-										to="/orders/me"
-										className="btn btn-danger btn-block mt-5">
-										My Orders
+										to="/me/update"
+										id="edit_profile"
+										className="btn btn-primary btn-block mt-5">
+										Edit Profile
 									</Link>
-								)}
+									{user.role !== 'admin' && (
+										<Link
+											to="/orders/me"
+											className="btn btn-danger btn-block mt-5">
+											My Orders
+										</Link>
+									)}
+									<Link
+										to="/password/update"
+										className="btn btn-primary btn-block mt-5">
+										Change Password
+									</Link>
+								</div>
 
-								<Link
-									to="/password/update"
-									className="btn btn-primary btn-block mt-3">
-									Change Password
-								</Link>
+								<div className="col-12 col-md-5">
+									<h4>Full Name</h4>
+									<p>{user.name}</p>
+
+									<h4>Email Address</h4>
+									<p>{user.email}</p>
+
+									<h4>Joined On</h4>
+									<p>{String(user.createdAt).substring(0, 10)}</p>
+								</div>
 							</div>
 						</div>
 					</Fragment>

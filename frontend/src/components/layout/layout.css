@@ -188,7 +188,7 @@ r .top-header .header-dropdown li:nth-child(2) {
 		background-color 250ms;
 }
 #btn.active {
-	left: 150px;
+	left: 200px;
 }
 #btn.active div {
 	background-color: #00dffc;
@@ -209,7 +209,7 @@ r .top-header .header-dropdown li:nth-child(2) {
 	overflow: auto;
 	top: 0px;
 	left: -275px;
-	width: 200px;
+	width: 250px;
 	opacity: 0;
 	padding: 20px 0px;
 	height: 100%;
@@ -223,19 +223,27 @@ r .top-header .header-dropdown li:nth-child(2) {
 }
 #items {
 	position: relative;
-	top: 50%;
+	top: 25%;
 	transform: translateY(-50%);
 }
 #items .item {
 	position: relative;
 	cursor: pointer;
-	padding: 15px 30px;
+	padding: 10px 10px;
 	transition: all 250ms;
-	text-align: center !important;
 	font-weight: 600;
+	width: 90%;
+	text-align: left !important;
+	letter-spacing: 1px;
+}
+#items .item a {
+	text-decoration: none;
+}
+#items .item li {
+	padding: 0px 0px;
 }
 #items .item:hover {
-	padding: 15px 45px;
+	padding: 10px 5px;
 	background-color: rgba(52, 56, 56, 0.2);
 }
 #btn,

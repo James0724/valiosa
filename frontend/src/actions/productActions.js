@@ -57,7 +57,7 @@ export const getProducts =
 		}
 	};
 
-export const newProduct = (productData) => async (dispatch) => {
+export const newProduct = (formData) => async (dispatch) => {
 	try {
 		dispatch({ type: NEW_PRODUCT_REQUEST });
 
@@ -69,7 +69,7 @@ export const newProduct = (productData) => async (dispatch) => {
 
 		const { data } = await axios.post(
 			`/api/v1/admin/product/new`,
-			productData,
+			formData,
 			config
 		);
 

@@ -14,11 +14,10 @@ const NewProduct = ({ history }) => {
 	const [description, setDescription] = useState('');
 	const [category, setCategory] = useState('');
 	const [stock, setStock] = useState(0);
-	const [seller, setSeller] = useState('');
 	const [images, setImages] = useState([]);
 	const [imagesPreview, setImagesPreview] = useState([]);
 
-	const categories = ['Stationary', 'IT', 'Furniture', 'Branding'];
+	//const categories = ['Stationary', 'IT', 'Furniture', 'Branding'];
 
 	const alert = useAlert();
 	const dispatch = useDispatch();
@@ -47,7 +46,6 @@ const NewProduct = ({ history }) => {
 		formData.set('description', description);
 		formData.set('category', category);
 		formData.set('stock', stock);
-		formData.set('seller', seller);
 
 		images.forEach((image) => {
 			formData.append('images', image);
@@ -114,7 +112,15 @@ const NewProduct = ({ history }) => {
 										onChange={(e) => setPrice(e.target.value)}
 									/>
 								</div>
-
+								<div className="form-group">
+									<label htmlFor="category_field">Category</label>
+									<input
+										className="form-control"
+										id="category"
+										value={category}
+										onChange={(e) => setCategory(e.target.value)}
+									/>
+								</div>
 								<div className="form-group">
 									<label htmlFor="description_field">Description</label>
 									<textarea
@@ -126,20 +132,6 @@ const NewProduct = ({ history }) => {
 								</div>
 
 								<div className="form-group">
-									<label htmlFor="category_field">Category</label>
-									<select
-										className="form-control"
-										id="category_field"
-										value={category}
-										onChange={(e) => setCategory(e.target.value)}>
-										{categories.map((category) => (
-											<option key={category} value={category}>
-												{category}
-											</option>
-										))}
-									</select>
-								</div>
-								<div className="form-group">
 									<label htmlFor="stock_field">Stock</label>
 									<input
 										type="number"
@@ -147,17 +139,6 @@ const NewProduct = ({ history }) => {
 										className="form-control"
 										value={stock}
 										onChange={(e) => setStock(e.target.value)}
-									/>
-								</div>
-
-								<div className="form-group">
-									<label htmlFor="seller_field">Seller Name</label>
-									<input
-										type="text"
-										id="seller_field"
-										className="form-control"
-										value={seller}
-										onChange={(e) => setSeller(e.target.value)}
 									/>
 								</div>
 

@@ -1,25 +1,53 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import MetaData from '../layout/MetaData';
 
+import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
-import { saveShippingInfo } from '../../actions/cartActions';
+import { createOrder, clearErrors } from '../../actions/orderActions';
 
 const Shipping = ({ history }) => {
+	const dispatch = useDispatch();
+	const alert = useAlert();
+
 	const { cartItems } = useSelector((state) => state.cart);
 	const { shippingInfo } = useSelector((state) => state.cart);
 	const { user } = useSelector((state) => state.auth);
+	const { error } = useSelector((state) => state.newOrder);
+
+	useEffect(() => {
+		if (error) {
+			alert.error(error);
+			dispatch(clearErrors());
+		}
+	}, [dispatch, alert, error]);
+
+	// Calculate Order Prices
+	const itemsPrice = cartItems.reduce(
+		(acc, item) => acc + item.price * item.quantity,
+		0
+	);
+	const shippingPrice = itemsPrice > 2000 ? 0 : 200;
+	const totalPrice = (itemsPrice + shippingPrice).toFixed(2);
 
 	const [address, setAddress] = useState(shippingInfo.address);
 	const [city, setCity] = useState(shippingInfo.city);
 	const [phoneNo, setPhoneNo] = useState(shippingInfo.phoneNo);
 	const [name, setName] = useState(user.name);
 
-	const dispatch = useDispatch();
+	const order = {
+		orderItems: cartItems,
+		shippingInfo,
+		totalPrice,
+	};
 
 	const submitHandler = (e) => {
 		e.preventDefault();
+
+		dispatch(createOrder(order));
+
+		console.log(order);
 	};
 
 	return (
@@ -39,7 +67,6 @@ const Shipping = ({ history }) => {
 												class="btn btn-link"
 												data-toggle="collapse"
 												data-target="#collapseOne"
-												aria-expanded="false"
 												aria-controls="collapseOne"
 											/>
 											<span>
@@ -95,7 +122,6 @@ const Shipping = ({ history }) => {
 												class="btn btn-link collapsed"
 												data-toggle="collapse"
 												data-target="#collapseTwo"
-												aria-expanded="false"
 												aria-controls="collapseTwo"
 											/>
 											<span>Deliver to my address (home or office)</span>
@@ -217,16 +243,9 @@ const Shipping = ({ history }) => {
 							</p>
 							<p>
 								Total cost: ksh{' '}
-								<span className="order-summary-values">
-									{cartItems
-										.reduce(
-											(acc, item) =>
-												acc + Number(item.quantity) * Number(item.price),
-											0
-										)
-										.toFixed(2)}
-									/=
-								</span>
+								<p>
+									<span className="order-summary-values">kes{totalPrice}</span>
+								</p>
 							</p>
 							<hr />
 							<Link

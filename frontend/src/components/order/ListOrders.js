@@ -81,21 +81,28 @@ const ListOrders = () => {
 
 	return (
 		<Fragment>
-			<MetaData title={'My Orders'} />
+			<div className="container">
+				<MetaData title={'My Orders'} />
 
-			<h1 className="my-5">My Orders</h1>
+				<div className="mt-5 mb-2">
+					<div className="title1">
+						<h4>My</h4>
+						<h2 className="title-inner1">Orders</h2>
+					</div>
 
-			{loading ? (
-				<Loader />
-			) : (
-				<MDBDataTable
-					data={setOrders()}
-					className="px-3"
-					bordered
-					striped
-					hover
-				/>
-			)}
+					{loading ? (
+						<Loader />
+					) : (
+						<MDBDataTable
+							data={setOrders()}
+							className="px-3"
+							bordered
+							striped
+							hover
+						/>
+					)}
+				</div>
+			</div>
 		</Fragment>
 	);
 };

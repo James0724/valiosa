@@ -44,86 +44,114 @@ const OrderDetails = ({ match }) => {
 
 	return (
 		<Fragment>
-			<MetaData title={'Order Details'} />
+			<div className="container">
+				<MetaData title={'Order Details'} />
 
-			{loading ? (
-				<Loader />
-			) : (
-				<Fragment>
-					<div className="row d-flex justify-content-between">
-						<div className="col-12 col-lg-8 mt-5 order-details">
-							<h1 className="my-5">Order # {order._id}</h1>
-
-							<h4 className="mb-4">Shipping Info</h4>
-							<p>
-								<b>Name:</b> {user && user.name}
-							</p>
-							<p>
-								<b>Phone:</b> {shippingInfo && shippingInfo.phoneNo}
-							</p>
-							<p className="mb-4">
-								<b>Address:</b>
-								{shippingDetails}
-							</p>
-							<p>
-								<b>Amount:</b> kes {totalPrice}/=
-							</p>
-
-							<hr />
-
-							<h4 className="my-4">Payment</h4>
-							<p className={isPaid ? 'greenColor' : 'redColor'}>
-								<b>{isPaid ? 'PAID' : 'NOT PAID'}</b>
-							</p>
-
-							<h4 className="my-4">Order Status:</h4>
-							<p
-								className={
-									order.orderStatus &&
-									String(order.orderStatus).includes('Delivered')
-										? 'greenColor'
-										: 'redColor'
-								}>
-								<b>{orderStatus}</b>
-							</p>
-
-							<h4 className="my-4">Order Items:</h4>
-
-							<hr />
-							<div className="cart-item my-1">
-								{orderItems &&
-									orderItems.map((item) => (
-										<div key={item.product} className="row my-5">
-											<div className="col-4 col-lg-2">
-												<img
-													src={item.image}
-													alt={item.name}
-													height="45"
-													width="65"
-												/>
-											</div>
-
-											<div className="col-5 col-lg-5">
-												<Link to={`/products/${item.product}`}>
-													{item.name}
-												</Link>
-											</div>
-
-											<div className="col-4 col-lg-2 mt-4 mt-lg-0">
-												<p>kes {item.price}/=</p>
-											</div>
-
-											<div className="col-4 col-lg-3 mt-4 mt-lg-0">
-												<p>{item.quantity} Piece(s)</p>
-											</div>
-										</div>
-									))}
+				{loading ? (
+					<Loader />
+				) : (
+					<Fragment>
+						<div className="mt-5 mb-3">
+							<div className="title1">
+								<h4>Order #</h4>
+								<h2 className="title-inner1">{order._id}</h2>
 							</div>
-							<hr />
+							<div className="title1">
+								<h4>Order Info</h4>
+							</div>
+
+							<div className="order-details">
+								<p>
+									<b>Name:</b> {user && user.name}
+								</p>
+								<p>
+									<b>Phone:</b> {shippingInfo && shippingInfo.phoneNo}
+								</p>
+								<p className="mb-4">
+									<b>Address:</b>
+									{shippingDetails}
+								</p>
+								<p>
+									<b>Amount:</b> kes {totalPrice}/=
+								</p>
+								<div className="d-flex">
+									<p>
+										<b>Payment</b>
+									</p>
+									<p className={isPaid ? 'greenColor' : 'redColor'}>
+										{isPaid ? 'Paid' : 'Not Paid'}
+									</p>
+								</div>
+								<div className="d-flex">
+									<p>
+										<b>Order Status</b>
+									</p>
+									<p
+										className={
+											order.orderStatus &&
+											String(order.orderStatus).includes('Delivered')
+												? 'greenColor'
+												: 'redColor'
+										}>
+										<b>{orderStatus}</b>
+									</p>
+								</div>
+
+								<hr />
+
+								<div className="title1">
+									<h4>Order Items</h4>
+								</div>
+
+								<hr />
+								<div className="cart-item my-1">
+									{orderItems &&
+										orderItems.map((item) => (
+											<div key={item.product} className="row my-5">
+												<div class="col-lg-8 mx-auto">
+													<ul class="list-group shadow bg">
+														<li class="list-group-item">
+															<div class="media align-items-lg-center flex-column flex-lg-row p-3">
+																<div class="media-body order-2 order-lg-1">
+																	<h5 class="mt-0 font-weight-bold mb-2">
+																		<Link to={`/products/${item.product}`}>
+																			{item.name}
+																		</Link>
+																	</h5>
+
+																	<h6 class="font-weight-bold my-2">
+																		<div className="col-4 col-lg-2 mt-4 mt-lg-0">
+																			<p>{item.quantity} Piece(s)</p>
+																		</div>
+																	</h6>
+
+																	<div class="d-flex align-items-center justify-content-between mt-1">
+																		<h6 class="font-weight-bold my-2">
+																			<div className="col-4 col-lg-2 mt-4 mt-lg-0">
+																				<p>kes {item.price}/=</p>
+																			</div>
+																		</h6>
+																	</div>
+																</div>
+																<img
+																	src={item.image}
+																	alt={item.name}
+																	width="200"
+																	class="ml-lg-5 order-1 order-lg-2"
+																/>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										))}
+								</div>
+								<hr />
+							</div>
 						</div>
-					</div>
-				</Fragment>
-			)}
+					</Fragment>
+				)}
+			</div>
 		</Fragment>
 	);
 };
