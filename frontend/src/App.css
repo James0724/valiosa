@@ -712,12 +712,13 @@ footer p {
 .subscribe {
 	text-align: center;
 }
-.subscribe h4 {
+.subscribe h5 {
 	color: #ca76d8;
 	text-transform: uppercase;
 	font-weight: 700;
 	display: block;
 	margin-bottom: 15px;
+	font-size: 16px;
 }
 .subscribe h4 i {
 	color: #ca76d8;
@@ -754,13 +755,13 @@ footer p {
 
 .footer-social,
 .social-white {
-	margin-top: 40px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	float: right;
 }
 .footer-social li,
 .social-white li {
@@ -769,14 +770,14 @@ footer p {
 }
 .footer-social i,
 .social-white i {
-	font-size: 20px;
-	color: #ca76d8;
+	font-size: 24px;
+	color: #390375;
 	-webkit-transition: 0.5s ease;
 	transition: 0.5s ease;
 }
 .footer-social i:hover,
 .social-white i:hover {
-	color: #ca76d8 !important;
+	color: #f8f8f8 !important;
 	-webkit-transition: 0.5s ease;
 	transition: 0.5s ease;
 }
@@ -792,12 +793,10 @@ footer p {
 
 .footer-theme .sub-title h4 {
 	color: #ca76d8;
-
-	margin-top: 25px;
 	text-transform: uppercase;
 	font-weight: 600;
-
 	font-size: 15px;
+	margin-bottom: 0;
 }
 .footer-theme .sub-title li {
 	position: relative;
@@ -807,6 +806,9 @@ footer p {
 	font-size: 14px;
 	color: #ca76d8;
 	list-style: none;
+}
+.footer-theme .sub-title li:first-child {
+	padding-top: 0px;
 }
 .footer-theme .sub-title li a {
 	position: relative;
@@ -829,29 +831,11 @@ footer p {
 	-webkit-transition: 0.5s ease;
 	transition: 0.5s ease;
 }
-.footer-theme .sub-title .contact-list i {
-	position: absolute;
-	left: 0;
-	top: 21px;
+
+.footer-theme .sub-title .contact-list li:first-child {
+	line-height: normal;
 }
-.footer-theme .sub-title .contact-list li {
-	position: relative;
-	padding-left: 25px;
-	line-height: 28px;
-}
-.footer-theme .sub-title .contact-list li a:hover {
-	color: #ca76d8;
-	-webkit-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-}
-.footer-theme .sub-title .contact-list li:hover {
-	color: #fff;
-	-webkit-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-.footer-theme .sub-title .contact-list li:hover a:before {
-	display: none;
-}
+
 .footer-theme .sub-title .contact-list li:last-child {
 	margin-bottom: -5px;
 }
@@ -982,9 +966,7 @@ section .section-title {
 	.footer-light .subscribe {
 		border-right: none;
 	}
-	.footer-title {
-		border-bottom: 1px solid #ca76d8;
-	}
+
 	.footer-title h4 {
 		text-align: left !important;
 	}
@@ -993,6 +975,11 @@ section .section-title {
 	}
 	.sub-footer .footer-end {
 		text-align: center;
+	}
+	.footer-social,
+	.social-white {
+		float: none;
+		display: block;
 	}
 }
 
@@ -1748,9 +1735,6 @@ button.btn.btn-outline:active {
 	height: auto;
 }
 @media (max-width: 1367px) {
-	.subscribe-form .form-control {
-		width: 150px;
-	}
 }
 @media (max-width: 900px) {
 	.btn {
@@ -1759,6 +1743,9 @@ button.btn.btn-outline:active {
 	}
 	.btn-solid {
 		padding: 15px 5px;
+	}
+	.subscribe-form .form-control {
+		width: 200px;
 	}
 }
 /********************************1.2.Title CSS start****************/

@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
-		<footer className="footer-light">
+		<footer className="footer-light mt-5 ">
 			<div className="light-layout">
 				<div className="container">
 					<section className="small-section border-section border-top-0">
 						<div className="row">
-							<div className="col-lg-6">
+							<div className="col-lg-6 pl-0">
 								<div className="subscribe">
 									<div>
-										<h4>GET OUR OFFERS FIRST HAND!</h4>
+										<h5>GET OUR OFFERS FIRST HAND!</h5>
 										<p>
 											Never Miss Anything From Valiosa Company Limited By
 											Signing Up To Our Newsletter.
@@ -19,9 +19,9 @@ const Footer = () => {
 									</div>
 								</div>
 							</div>
-							<div className="col-lg-6">
+							<div className="col-lg-6 pl-0">
 								<form className="form-inline subscribe-form">
-									<div className="form-group mx-sm-3">
+									<div className="form-group">
 										<input
 											type="text"
 											className="form-control"
@@ -40,55 +40,16 @@ const Footer = () => {
 
 				<section className="section-b-space ">
 					<div className="container">
-						<div className="row footer-theme">
-							<div className="col-lg-4 col-md-6">
-								<div className=" mt-2 ">
-									{/* <div className="footer-logo">
-										<div className="col-sm text-center">
-											<h1>
-												<Link to="/">
-													<img
-														style={{ width: '250px', height: '100px' }}
-														src="/images/Valiosa_logo.png"
-														alt="logo"
-													/>
-												</Link>
-											</h1>
-										</div>
-									</div> */}
+						<div className="row footer-theme mt-2">
+							<div className="col-6 col-lg-4 order-1 hidden-phone">
+								<div className="">
 									<p>
 										We Offer An excellence of wide range services from Office,
 										School Stationery, IT, Furniture to Branding
 									</p>
-									<div className="footer-social">
-										<ul>
-											<li>
-												<Link to={'https://www.facebook.com/'}>
-													<i className="fa fa-facebook" aria-hidden="true"></i>
-												</Link>
-											</li>
-											<li>
-												<Link to={'https://plus.google.com/'}>
-													<i
-														className="fa fa-google-plus"
-														aria-hidden="true"></i>
-												</Link>
-											</li>
-											<li>
-												<Link to={'https://twitter.com'}>
-													<i className="fa fa-twitter" aria-hidden="true"></i>
-												</Link>
-											</li>
-											<li>
-												<Link to={'https://instagram.com'}>
-													<i className="fa fa-instagram" aria-hidden="true"></i>
-												</Link>
-											</li>
-										</ul>
-									</div>
 								</div>
 							</div>
-							<div className="col-sm ">
+							<div className="col-6 col-lg-2 order-2 ">
 								<div className="sub-title">
 									<div className="footer-contant">
 										<ul>
@@ -96,36 +57,21 @@ const Footer = () => {
 												<h4 className="footer-title">About us</h4>
 											</li>
 											<li>
-												<Link to="!#">Our story</Link>
+												<Link to="#">Mission</Link>
 											</li>
 											<li>
-												<Link to="!#">Mission</Link>
-											</li>
-											<li>
-												<Link to="!#">Vision</Link>
-											</li>
-											<li>
-												<Link to="!#">Objective</Link>
+												<Link to="#">Vision</Link>
 											</li>
 										</ul>
 									</div>
 								</div>
 							</div>
-							<div className="col-sm">
+							<div className="col-6 col-lg-3 order-3 hidden-phone">
 								<div className="sub-title">
 									<div className="footer-contant">
 										<ul>
 											<li>
-												<h4 className="footer-title">Customer Service</h4>
-											</li>
-											<li>
 												<Link to="#">shipping & return</Link>
-											</li>
-											<li>
-												<Link to="#">secure shopping</Link>
-											</li>
-											<li>
-												<Link to="#">FAQ</Link>
 											</li>
 											<li>
 												<Link to="#">Payment Policy</Link>
@@ -137,25 +83,19 @@ const Footer = () => {
 									</div>
 								</div>
 							</div>
-							<div className="col-sm">
+
+							<div className="col-6 col-lg-3 order-4 pl-0">
 								<div className="sub-title">
-									{/* <div className="footer-title">
-										<h4>store information</h4>
-									</div> */}
 									<div className="footer-contant">
-										<ul className="contact-list">
+										<ul className="pl-0">
 											<li>
-												<h4 className="footer-title">store information</h4>
+												<Link to="#">Nairobi</Link>
 											</li>
 											<li>
-												<i className="fa fa-map-marker"></i>NAIROBI
+												<Link to="#">Call Us: 0707-283-342</Link>
 											</li>
 											<li>
-												<i className="fa fa-phone"></i>Call Us: 0707-283-342
-											</li>
-											<li>
-												<i className="fa fa-envelope-o"></i>Email Us:
-												Support@valiosa.com
+												<Link to="#">Support@valiosa.com</Link>
 											</li>
 										</ul>
 									</div>
@@ -165,7 +105,7 @@ const Footer = () => {
 					</div>
 				</section>
 			</div>
-			<div className="sub-footer ">
+			<div className="sub-footer">
 				<div className="container">
 					<div className="row">
 						<div className="col-xl-6 col-md-6 col-sm-12">
@@ -177,28 +117,26 @@ const Footer = () => {
 							</div>
 						</div>
 						<div className="col-xl-6 col-md-6 col-sm-12">
-							<div className="payment-card-bottom">
+							<div className="footer-social  footer-end mt-3">
 								<ul>
 									<li>
-										<img src="/assets/images/icons/mastercard.png" alt="" />
-									</li>
-									<li>
-										<Link to="#">
-											<img
-												src="/assets/images/icons/mpesa.png"
-												alt=""
-												style={{ width: 'auto', height: '30px' }}
-											/>
+										<Link to={'https://www.facebook.com/'}>
+											<i className="fa fa-facebook" aria-hidden="true"></i>
 										</Link>
 									</li>
 									<li>
-										<Link to="#">
-											<img src="/assets/images/icons/paypal.png" alt="" />
+										<Link to={'https://plus.google.com/'}>
+											<i className="fa fa-google-plus" aria-hidden="true"></i>
 										</Link>
 									</li>
 									<li>
-										<Link to="#">
-											<img src="/assets/images/icons/visa.png" alt="" />
+										<Link to={'https://twitter.com'}>
+											<i className="fa fa-twitter" aria-hidden="true"></i>
+										</Link>
+									</li>
+									<li>
+										<Link to={'https://instagram.com'}>
+											<i className="fa fa-instagram" aria-hidden="true"></i>
 										</Link>
 									</li>
 								</ul>
