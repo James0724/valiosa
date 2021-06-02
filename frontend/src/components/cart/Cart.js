@@ -221,11 +221,16 @@ const Cart = ({ history }) => {
 							<div className="row">
 								<div className="col-sm-12">
 									<div>
-										<div className="col-sm-12 empty-cart-cls text-center">
-											<h3>
+										<div className="col-sm-12 empty-cart-cls text-center mt-5 mb-5">
+											<h4>
 												<strong>Your Cart is Empty</strong>
-											</h3>
-											<h4>Explore more shortlist some items.</h4>
+											</h4>
+											<h6>Explore more to shortlist some items.</h6>
+											<div className="mt-5">
+												<Link to="/" className="btn btn-solid">
+													Explore Products
+												</Link>
+											</div>
 										</div>
 									</div>
 								</div>

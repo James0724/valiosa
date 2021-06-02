@@ -44,7 +44,7 @@ const Dashboard = () => {
 					<div className="col-12 col-md-9">
 						<div className="title1">
 							<h4> Admin Panel</h4>
-							<h2 className="title-inner1">DASHBOARD</h2>
+							<h2 className="title-inner1">Dashboard</h2>
 						</div>
 
 						{loading ? (
@@ -58,7 +58,7 @@ const Dashboard = () => {
 										<div className="card text-white bg-primary o-hidden h-100">
 											<div className="card-body">
 												<div className="text-center card-font-size">
-													Total Amount
+													Total Order Amount
 													<br />{' '}
 													<b>kes {totalAmount && totalAmount.toFixed(2)} /=</b>
 												</div>
