@@ -3,6 +3,7 @@ export const REMOVE_ITEM_CART = 'REMOVE_ITEM_CART';
 export const SAVE_SHIPPING_INFO = 'SAVE_SHIPPING_INFO';
 export const INCREMENT_QTY = 'INCREMENT_QTY';
 export const DECREMENT_QTY = 'DECREMENT_QTY';
+export const CART_RESET = 'CART_RESET';
 
 // WishList
 export const ADD_TO_WISHLIST = 'ADD_TO_WISHLIST';

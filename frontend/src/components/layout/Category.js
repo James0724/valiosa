@@ -5,8 +5,8 @@ const Category = () => {
 	return (
 		<section data-aos="fade-left" className="category">
 			<div className="title1">
-				<h4>Our Collections</h4>
-				<h2 className="title-inner1">Shop by category</h2>
+				<h4>Our</h4>
+				<h2 className="title-inner1">Collections</h2>
 			</div>
 			<div className="row">
 				<div className="col mb-lg-0">

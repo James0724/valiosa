@@ -2,6 +2,7 @@ import {
 	ADD_TO_CART,
 	REMOVE_ITEM_CART,
 	SAVE_SHIPPING_INFO,
+	CART_RESET,
 } from '../constants/cartConstants';
 
 export const cartReducer = (
@@ -21,7 +22,7 @@ export const cartReducer = (
 					...state,
 					cartItems: state.cartItems.map((i) =>
 						i.product === isItemExist.product ? item : i
-					), 
+					),
 				};
 			} else {
 				return {
@@ -29,6 +30,11 @@ export const cartReducer = (
 					cartItems: [...state.cartItems, item],
 				};
 			}
+		case CART_RESET:
+			return {
+				...state,
+				cartItems: [],
+			};
 
 		case REMOVE_ITEM_CART:
 			return {

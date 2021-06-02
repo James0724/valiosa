@@ -79,7 +79,7 @@ const OrderDetails = ({ match }) => {
 										<b>Payment</b>
 									</p>
 									<p className={isPaid ? 'greenColor' : 'redColor'}>
-										{isPaid ? 'Paid' : 'Not Paid'}
+										{isPaid ? 'Paid' : 'Cash On Delivery'}
 									</p>
 								</div>
 								<div className="d-flex">

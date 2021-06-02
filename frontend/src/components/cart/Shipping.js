@@ -6,13 +6,13 @@ import MetaData from '../layout/MetaData';
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { createOrder, clearErrors } from '../../actions/orderActions';
+import { CART_RESET } from '../../constants/cartConstants';
 
 const Shipping = ({ history }) => {
 	const dispatch = useDispatch();
 	const alert = useAlert();
 
-	const { cartItems } = useSelector((state) => state.cart);
-	const { shippingInfo } = useSelector((state) => state.cart);
+	const { shippingInfo, cartItems } = useSelector((state) => state.cart);
 	const { user } = useSelector((state) => state.auth);
 	const { error } = useSelector((state) => state.newOrder);
 
@@ -46,8 +46,9 @@ const Shipping = ({ history }) => {
 		e.preventDefault();
 
 		dispatch(createOrder(order));
+		dispatch({ type: CART_RESET });
 
-		console.log(order);
+		history.push('/success');
 	};
 
 	return (

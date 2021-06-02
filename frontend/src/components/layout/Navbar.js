@@ -7,28 +7,7 @@ class NavBar extends Component {
 			<div>
 				<div className="main-navbar">
 					<div id="mainnav">
-						<ul className="nav-menu">
-							<li>
-								<Link to="#" className="nav-link">
-									Stationary
-								</Link>
-							</li>
-							<li>
-								<Link to="#" className="nav-link">
-									IT
-								</Link>
-							</li>
-							<li>
-								<Link to="#" className="nav-link">
-									Furnitures
-								</Link>
-							</li>
-							<li>
-								<Link to="#" className="nav-link">
-									Branding
-								</Link>
-							</li>
-						</ul>
+						<p className="mb-0">Never Talk Price Always Talk Value </p>
 					</div>
 				</div>
 			</div>

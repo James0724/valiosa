@@ -209,7 +209,7 @@ const Cart = ({ history }) => {
 								</div>
 								<div className="col-6">
 									<button className="btn btn-solid" onClick={checkoutHandler}>
-										check out
+										Confirm Order
 									</button>
 								</div>
 							</div>
