@@ -2032,8 +2032,6 @@ button.btn.btn-outline:active {
 	color: #444444;
 	font-weight: 700;
 }
-.field-label {
-}
 .field-label label {
 	line-height: 24px;
 	text-transform: capitalize;

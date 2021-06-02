@@ -21,7 +21,7 @@ const Category = () => {
 								<span>Stationery</span>
 							</h2>
 						</figcaption>
-						<Link to="!#"></Link>
+						<Link to="#"></Link>
 					</figure>
 				</div>
 				<div className="col mb-lg-0">
@@ -32,7 +32,7 @@ const Category = () => {
 								<span>IT</span>
 							</h2>
 						</figcaption>
-						<Link to="!#"></Link>
+						<Link to="#"></Link>
 					</figure>
 				</div>
 				<div className="col mb-lg-0">
@@ -47,7 +47,7 @@ const Category = () => {
 								<span>Furnitures</span>
 							</h2>
 						</figcaption>
-						<Link to="!#"></Link>
+						<Link to="#"></Link>
 					</figure>
 				</div>
 				<div className="col mb-lg-0">
@@ -63,7 +63,7 @@ const Category = () => {
 								<span>Branding</span>
 							</h2>
 						</figcaption>
-						<Link to="!#"></Link>
+						<Link to="#"></Link>
 					</figure>
 				</div>
 			</div>
