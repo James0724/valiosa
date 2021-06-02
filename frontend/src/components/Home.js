@@ -10,7 +10,6 @@ import Carousel from 'react-bootstrap/Carousel';
 import HighlightInfo from '../components/Highlight/HighlightInfo';
 import TopBrands from './Highlight/TopBrands';
 import Advert from '../components/Highlight/Advert';
-import Category from '../components/layout/Category';
 import Clients from '../components/Highlight/Clients';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -96,8 +95,6 @@ const Home = ({ match }) => {
 						<div className="container container-fluid bg">
 							<hr />
 							<TopBrands />
-							<hr />
-							<Category />
 							<hr />
 							<div className="title1" data-aos="fade-right">
 								<h4>Special product</h4>
