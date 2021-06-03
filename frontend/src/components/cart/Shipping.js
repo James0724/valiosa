@@ -46,7 +46,6 @@ const Shipping = ({ history }) => {
 		e.preventDefault();
 
 		dispatch(createOrder(order));
-		dispatch({ type: CART_RESET });
 
 		history.push('/success');
 	};
