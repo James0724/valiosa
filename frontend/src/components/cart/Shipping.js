@@ -28,8 +28,8 @@ const Shipping = ({ history }) => {
 		(acc, item) => acc + item.price * item.quantity,
 		0
 	);
-	const shippingPrice = itemsPrice > 2000 ? 0 : 200;
-	const totalPrice = (itemsPrice + shippingPrice).toFixed(2);
+	//const shippingPrice = itemsPrice > 2000 ? 0 : 200;
+	const totalPrice = itemsPrice.toFixed(2);
 
 	const [address, setAddress] = useState(shippingInfo.address);
 	const [city, setCity] = useState(shippingInfo.city);
