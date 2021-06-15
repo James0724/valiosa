@@ -22,7 +22,7 @@ import {
 	CLEAR_ERRORS,
 } from '../constants/orderConstants';
 
-export const createOrder = (order) => async (dispatch, getState) => {
+export const createOrder = (order) => async (dispatch) => {
 	try {
 		dispatch({ type: CREATE_ORDER_REQUEST });
 
@@ -36,13 +36,14 @@ export const createOrder = (order) => async (dispatch, getState) => {
 
 		dispatch({
 			type: CREATE_ORDER_SUCCESS,
-			payload: data,
+			payload: data.order,
 		});
 	} catch (error) {
 		dispatch({
 			type: CREATE_ORDER_FAIL,
 			payload: error.response.data.message,
 		});
+		console.log(error);
 	}
 };
 

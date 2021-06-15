@@ -7,6 +7,7 @@ import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
 import { createOrder, clearErrors } from '../../actions/orderActions';
 import { CART_RESET } from '../../constants/cartConstants';
+import { saveShippingInfo } from '../../actions/cartActions';
 
 const Shipping = ({ history }) => {
 	const dispatch = useDispatch();
@@ -46,8 +47,9 @@ const Shipping = ({ history }) => {
 		e.preventDefault();
 
 		dispatch(createOrder(order));
-
 		history.push('/success');
+		dispatch({ type: CART_RESET });
+		dispatch(saveShippingInfo({ address, city, phoneNo }));
 	};
 
 	return (
@@ -95,12 +97,14 @@ const Shipping = ({ history }) => {
 												/>
 											</div>
 											<div className="form-group field-label pl-5">
-												<label htmlFor="review">Phone Number</label>
+												<label htmlFor="email">Phone Number</label>
 												<input
 													type="text"
 													className="form-control"
-													id="review"
-													placeholder="Enter Phone Number"
+													id="PhoneNo"
+													placeholder="Phone Number"
+													value={phoneNo}
+													onChange={(e) => setPhoneNo(e.target.value)}
 												/>
 											</div>
 											<button

@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer';
 
 import Home from './components/Home';
 import ProductDetails from './components/product/ProductDetails';
+import About from './components/About';
 
 // Cart Imports
 import Cart from './components/cart/Cart';
@@ -65,8 +66,9 @@ function App() {
 				<Route path="/" component={Home} exact />
 				<Route path="/search/:keyword" component={Home} />
 				<Route path="/product/:id" component={ProductDetails} exact />
-
 				<Route path="/cart" component={Cart} exact />
+				<Route path="/about" component={About} exact />
+
 				<ProtectedRoute path="/shipping" component={Shipping} />
 				<ProtectedRoute path="/confirm" component={ConfirmOrder} exact />
 				<ProtectedRoute path="/success" component={OrderSuccess} />

@@ -46,7 +46,7 @@ const Product = ({ product, col }) => {
 							</li>
 
 							<li>
-								<Link data-tip="Add to Cart" onClick={addToCart}>
+								<Link to="#" data-tip="Add to Cart" onClick={addToCart}>
 									<i className="fa fa-shopping-cart"></i>
 									<div style={{ display: 'none' }}>
 										<input

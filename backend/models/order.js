@@ -4,15 +4,12 @@ const orderSchema = mongoose.Schema({
 	shippingInfo: {
 		address: {
 			type: String,
-			required: true,
 		},
 		city: {
 			type: String,
-			required: true,
 		},
 		phoneNo: {
 			type: String,
-			required: true,
 		},
 	},
 	user: {
@@ -45,23 +42,6 @@ const orderSchema = mongoose.Schema({
 			},
 		},
 	],
-	paymentInfo: {
-		id: {
-			type: String,
-		},
-		status: {
-			type: String,
-		},
-	},
-	paidAt: {
-		type: Date,
-	},
-
-	itemsPrice: {
-		type: Number,
-		required: true,
-		default: 0.0,
-	},
 	shippingPrice: {
 		type: Number,
 		required: true,

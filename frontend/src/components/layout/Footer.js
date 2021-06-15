@@ -54,13 +54,13 @@ const Footer = () => {
 									<div className="footer-contant">
 										<ul>
 											<li>
-												<h4 className="footer-title">About us</h4>
+												<Link to="/about">About us</Link>
 											</li>
 											<li>
-												<Link to="#">Mission</Link>
+												<Link to="/about">Mission</Link>
 											</li>
 											<li>
-												<Link to="#">Vision</Link>
+												<Link to="/about">Vision</Link>
 											</li>
 										</ul>
 									</div>
@@ -120,22 +120,22 @@ const Footer = () => {
 							<div className="footer-social  footer-end mt-3">
 								<ul>
 									<li>
-										<Link to={'https://www.facebook.com/'}>
+										<Link to="#">
 											<i className="fa fa-facebook" aria-hidden="true"></i>
 										</Link>
 									</li>
 									<li>
-										<Link to={'https://plus.google.com/'}>
+										<Link to="#">
 											<i className="fa fa-google-plus" aria-hidden="true"></i>
 										</Link>
 									</li>
 									<li>
-										<Link to={'https://twitter.com'}>
+										<Link to="#">
 											<i className="fa fa-twitter" aria-hidden="true"></i>
 										</Link>
 									</li>
 									<li>
-										<Link to={'https://instagram.com'}>
+										<Link to="#">
 											<i className="fa fa-instagram" aria-hidden="true"></i>
 										</Link>
 									</li>

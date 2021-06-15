@@ -15,6 +15,7 @@ const TopBar = () => {
 	const { cartItems } = useSelector((state) => state.cart);
 
 	const logoutHandler = () => {
+		localStorage.clear();
 		dispatch(logout());
 		alert.success('Logged out successfully.');
 	};
